@@ -40,6 +40,10 @@ if ($method == "POST"){
     $sql = "";
     if ($acao == "SELECT") {
 
+      if($where != ""){
+        $where = "where $where";
+      }
+      
         $sql = "SELECT * from $tabela $where;";
 
         //Executar ação no banco
